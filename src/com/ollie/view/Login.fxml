@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ollie.controller.LoginController">
+   <children>
+      <Pane layoutX="160.0" layoutY="61.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #c7ccdb;">
+               <children>
+                  <Text layoutX="183.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+                  <TextField fx:id="userF" layoutX="131.0" layoutY="72.0" text="" />
+                  <PasswordField fx:id="passwordF" layoutX="131.0" layoutY="111.0" text="" />
+                  <Text layoutX="39.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+                  <Text layoutX="41.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                  <Button fx:id="loginButton" layoutX="174.0" layoutY="153.0" mnemonicParsing="false" onAction="#loginButtonPressed" style="-fx-background-color: #0c2441; -fx-text-fill: #ffffff;" text="Login" />
+                  <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="41.0" prefHeight="17.0" prefWidth="400.0" textAlignment="CENTER" textFill="RED" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

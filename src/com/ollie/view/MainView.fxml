@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ollie.controller.MainController">
+   <children>
+      <AnchorPane prefHeight="250.0" prefWidth="1200.0" style="-fx-background-color: #c7ccdb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="plusBtn" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#plusBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="+" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="12.0" />
+            <Button fx:id="minusBtn" layoutX="43.0" layoutY="12.0" mnemonicParsing="false" onAction="#minusBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="-" />
+            <Button fx:id="fiveSecBtn" layoutX="108.0" layoutY="12.0" mnemonicParsing="false" onAction="#fiveSecBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="5 Sec" />
+            <Button fx:id="thirtySecBtn" layoutX="163.0" layoutY="12.0" mnemonicParsing="false" onAction="#thirtySecBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="30 Sec" />
+            <Button fx:id="oneMinBtn" layoutX="226.0" layoutY="12.0" mnemonicParsing="false" onAction="#oneMinBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="1 Min" />
+            <Button fx:id="fiveMinBtn" layoutX="278.0" layoutY="12.0" mnemonicParsing="false" onAction="#fiveMinBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="5 Min" />
+            <Button fx:id="oneHrBtn" layoutX="332.0" layoutY="12.0" mnemonicParsing="false" onAction="#oneHrBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="1 Hr" />
+            <Button fx:id="oneDayBtn" layoutX="377.0" layoutY="12.0" mnemonicParsing="false" onAction="#oneDayBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="1 Day" />
+            <ComboBox fx:id="currencyPairCombo" layoutX="469.0" layoutY="12.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Button fx:id="updatePairBtn" layoutX="621.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePairBtnPressed" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="Update" />
+            <Button fx:id="confirmOrderBtn" layoutX="700.0" layoutY="191.0" mnemonicParsing="false" onAction="#confirmOrderBtnPressed" prefHeight="44.0" prefWidth="237.0" style="-fx-background-color: #1f82b8; -fx-text-fill: #ffffff;" text="Confirm Order" AnchorPane.rightAnchor="263.0" />
+            <Label layoutX="703.0" layoutY="63.0" text="Units " AnchorPane.rightAnchor="461.0" />
+            <Label layoutX="704.0" layoutY="90.0" text="Rate" AnchorPane.rightAnchor="468.0" />
+            <Label layoutX="702.0" layoutY="122.0" text="Take Profit" AnchorPane.rightAnchor="430.0" />
+            <Label layoutX="703.0" layoutY="153.0" text="Stop Loss" AnchorPane.rightAnchor="436.0" />
+            <ToggleButton fx:id="buyBtn" layoutX="948.0" layoutY="21.0" mnemonicParsing="false" onAction="#buySellBtnPressed" prefHeight="100.0" prefWidth="237.0" style="-fx-background-color: #22cda5; -fx-text-fill: #ffffff;" text="BUY" AnchorPane.rightAnchor="15.0" />
+            <ToggleButton fx:id="sellBtn" layoutX="949.0" layoutY="135.0" mnemonicParsing="false" onAction="#buySellBtnPressed" prefHeight="100.0" prefWidth="237.0" style="-fx-background-color: #ff5b5b; -fx-text-fill: #ffffff;" text="SELL" AnchorPane.rightAnchor="15.0" />
+            <TextField fx:id="unitsTF" layoutX="815.0" layoutY="53.0" prefHeight="27.0" prefWidth="120.0" AnchorPane.rightAnchor="265.0" />
+            <TextField fx:id="stopLossTF" layoutX="815.0" layoutY="149.0" prefHeight="27.0" prefWidth="120.0" AnchorPane.rightAnchor="265.0" />
+            <TextField fx:id="takeProfitTF" layoutX="815.0" layoutY="117.0" prefHeight="27.0" prefWidth="120.0" AnchorPane.rightAnchor="265.0" />
+            <TextField fx:id="rateTF" editable="false" layoutX="815.0" layoutY="85.0" prefHeight="27.0" prefWidth="120.0" AnchorPane.rightAnchor="265.0" />
+            <GridPane layoutX="14.0" layoutY="50.0" prefHeight="186.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="514.0" AnchorPane.topAnchor="50.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="79.0" minHeight="28.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="158.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane fx:id="accountOrderGP" style="-fx-background-color: #ffffff;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" vbarPolicy="ALWAYS" GridPane.rowIndex="1">
+                    <content>
+                      <AnchorPane style="-fx-background-color: #ffffff;">
+                           <children>
+                              <GridPane fx:id="openOrdersGP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="108.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="10.0" prefWidth="46.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="10.0" prefWidth="64.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="69.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="59.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="78.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="68.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="80.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="89.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="105.0" text="Transaction ID" textAlignment="CENTER" />
+                                    <Label prefHeight="17.0" prefWidth="54.0" text="Units" textAlignment="CENTER" GridPane.columnIndex="1" />
+                                    <Label prefHeight="17.0" prefWidth="66.0" text="Pair" textAlignment="CENTER" GridPane.columnIndex="2" />
+                                    <Label prefHeight="17.0" prefWidth="58.0" text="Buy/Sell" textAlignment="CENTER" GridPane.columnIndex="3" />
+                                    <Label prefHeight="17.0" prefWidth="57.0" style="-fx-background-color: ;" text="Price" textAlignment="CENTER" GridPane.columnIndex="4" />
+                                    <Label prefHeight="17.0" prefWidth="71.0" text="Profit/Loss" textAlignment="CENTER" GridPane.columnIndex="5" />
+                                    <Label prefHeight="17.0" prefWidth="67.0" text="Stop Loss" textAlignment="CENTER" GridPane.columnIndex="6" />
+                                    <Label prefHeight="17.0" prefWidth="77.0" text="Take Profit" textAlignment="CENTER" GridPane.columnIndex="7" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets left="2.0" right="2.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="542.0" prefWidth="908.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <LineChart fx:id="myChart" style="-fx-background-color: #0c2441;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" style="-fx-tick-label-fill: #ffffff;" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" style="-fx-tick-label-fill: #ffffff;" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1033.0" prefHeight="800.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
